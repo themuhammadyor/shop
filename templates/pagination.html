@@ -1,0 +1,78 @@
+{#<div class="justify-content-end">#}
+{#    {% if page_obj.has_previous %}#}
+{#        {% if page_obj.number|add:'-3' > 1 %}#}
+{#            <span class="pagination">#}
+{#                <a href="?{{ category }}page=1">1</a>#}
+{#            </span>#}
+{#        {% endif %}#}
+{#        {% if page_obj.number|add:'-3' >= 3 %}#}
+{#            <span class="pagination">#}
+{#                    <a href="?{{ category }}page={{ page_obj.previous_page_number|add:'-3' }}">#}
+{#                <span class="pagination">• • •</span>#}
+{#                </a>#}
+{#            </span>#}
+{#        {% endif %}#}
+{#    {% endif %}#}
+{#    {% if paginator.page_range|length > 1 %}#}
+{#        {% for i in paginator.page_range %}#}
+{#            {% if page_obj.number == i %}#}
+{#                <span class="pagination">#}
+{#                    <a class="pagination" href="#">{{ i }}</a>#}
+{#                </span>#}
+{#            {% elif i > page_obj.number|add:'-4' and i < page_obj.number|add:'4' %}#}
+{#                <span class="pagination">#}
+{#                        <a class="pagination" href="?{{ category }}page={{ i }}">{{ i }}</a>#}
+{#                </span>#}
+{#            {% endif %}#}
+{#        {% endfor %}#}
+{#    {% endif %}#}
+{#    {% if page_obj.has_next %}#}
+{#        {% if page_obj.number|add:'4' < page_obj.paginator.num_pages %}#}
+{#            <span class="pagination">#}
+{#                    <a href="?{{ category }}page={{ page_obj.next_page_number|add:'3' }}">#}
+{#                <span class="pagination">• • •</span>#}
+{#                </a>#}
+{#            </span>#}
+{#        {% endif %}#}
+{#        {% if page_obj.number|add:'3' < page_obj.paginator.num_pages %}#}
+{#            <span class="pagination">#}
+{#                    <a class="pagination" href="?{{ category }}page={{ page_obj.paginator.num_pages }}">#}
+{#                        {{ page_obj.paginator.num_pages }}#}
+{#                    </a>#}
+{#            </span>#}
+{#        {% endif %}#}
+{#    {% endif %}#}
+{#</div>#}
+
+
+{#<div div="row">#}
+{#    <div class="pagination pagination-lg justify-content-end"><span class="page-item disabled">#}
+{#        {% if page_obj.has_previous %}#}
+{#            <a class="text-decoration-none" href="?page=1" tabindex="-1">#}
+{#                <button class="btn btn-success">&laquo; 1</button>#}
+{#                </a>#}
+{#            <a class="text-decoration-none" href="?page={{ page_obj.previous_page_number }}" tabindex="-1"><button#}
+{#                    class="btn btn-success">previous</button></a>#}
+{#        {% endif %}#}
+{#        <span class="current">#}
+{#            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}#}
+{#        </span>#}
+{#        {% if page_obj.has_next %}#}
+{#            <a class="text-decoration-none" href="?page=1{{ page_obj.next_page_number }}" tabindex="-1"><button#}
+{#                    class="btn btn-success">next</button></a>#}
+{#            {% if page_obj.number|add:'4' < page_obj.paginator.num_pages %}#}
+{#                <li class="pagination__item pagination__item--dots">#}
+{#                    <a href="?{{ category }}page={{ page_obj.next_page_number|add:'3' }}">#}
+{#                <span class="pagination__link">• • •</span>#}
+{#                </a>#}
+{#            </li>#}
+{#            {% endif %}#}
+{#            <a class="text-decoration-none" href="?page={{ page_obj.paginator.num_pages }}" tabindex="-1"><button#}
+{#                    class="btn btn-success">{{ page_obj.paginator.num_pages }}</button></a>#}
+{#        {% endif %}#}
+{#    </span>#}
+{#        <li class="page-item">#}
+{#            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>#}
+{#        </li>#}
+{#    </div>#}
+{#</div>#}
