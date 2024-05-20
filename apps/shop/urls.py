@@ -5,8 +5,8 @@ from .views import HomePageView, AboutPageView, ContactPageView, ShopPageView, P
 app_name = 'shop'
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
-    path('', AboutPageView.as_view(), name='home'),
-    path('', ContactPageView.as_view(), name='home'),
+    path('about-us/', AboutPageView.as_view(), name='about'),
+    path('contact/', ContactPageView.as_view(), name='contact'),
     path('filter/', FilterProductsPageView.as_view(), name='filter'),
     path('shop/search/', SearchView.as_view(), name='search'),
     path('shop/category/<int:id>', CategoryPageView.as_view(), name='category'),
